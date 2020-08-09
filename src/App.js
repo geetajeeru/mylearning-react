@@ -1,25 +1,21 @@
 import React from 'react';
-import logo from './logo.svg';
+import {Provider} from "react-redux";
+import {BrowserRouter as Router, Route} from "react-router-dom";
 import './App.css';
+import Users from './components/Users';
+import store from "./store";
+import Todos from './components/Todos';
+import Home from './components/Home';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+        <Router>
+          <Route exact path="/" component={Home}/>
+          <Route exact path="/users" component={Users}/>
+          <Route exact path="/users/:id/todos" component={Todos}/>
+        </Router>
+    </Provider>
   );
 }
 

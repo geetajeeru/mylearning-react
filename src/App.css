@@ -1,38 +1,58 @@
-.App {
+.home, .users, .todos {
+  margin: 5%;
   text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.userTable {
+  border-collapse: collapse;
+  width: 90%;
+  margin-left: 6%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.userTable td, .userTable th {
+  border: 1px solid #ddd;
+  padding: 8px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.userTable tr:nth-child(even){background-color: #f2f2f2;}
+
+.userTable th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  background-color: #32b2d8;
+  color: #ffffff;
 }
 
-.App-link {
-  color: #61dafb;
+.linkToUsers {
+  position: absolute;
+  left: 11%;
+  top: 11%;
+  border: 2px solid #32b2d8;
+  border-radius: 5px;
+  background-color: #32b2d8;
+  color: #ffffff;
+  padding: 4px;
+  text-decoration: none;
+  font-weight: bold;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#userLink {
+  border: 2px solid #32b2d8;
+  border-radius: 5px;
+  background-color: #32b2d8;
+  color: #ffffff;
+  padding: 9px 23px 9px 23px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.todosLink {
+  border: 1px solid #32b2d8;
+  border-radius: 5px;
+  background-color: #32b2d8;
+  color: #ffffff;
+  padding: 3px;
+  text-decoration: none;
+  font-weight: bold;
 }
