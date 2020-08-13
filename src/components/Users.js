@@ -42,9 +42,16 @@ class Users extends Component {
                         <span>{user.name}</span>
                         <hr/>
                         <div className="card-body">
-                            <p><i class="fas fa-envelope"></i> {user.email}</p>
-                            <p><i class="fas fa-phone-volume"></i> {user.phone}</p>
-                            <p><i class="fas fa-building"></i> {user.company.name}</p>
+                            <div>
+                                <p><i class="fas fa-envelope"></i></p>
+                                <p><i class="fas fa-phone-volume"></i></p>
+                                <p><i class="fas fa-building"></i> </p>
+                            </div>
+                            <div>
+                                <p><span>&nbsp;{user.email}</span></p>
+                                <p><span>&nbsp;{user.phone}</span></p>
+                                <p><span>&nbsp;{user.company.name}</span></p>
+                            </div>
                         </div>
                     </div>
                 ))}
