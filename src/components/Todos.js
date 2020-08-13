@@ -31,24 +31,19 @@ class Todos extends Component {
             <div className="todos">
                 <Link to="/users" className="linkToUsers">Back To Users</Link>
                 <h1>Todos associated with User</h1>
-                <table className="userTable">
-                    <thead>
-                        <tr>
-                            <th>Title</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {
-                            todos.map(todo =>(
-                                <tr key={todo.id}>
-                                    <td>{todo.title}</td>
-                                    <td>{todo.completed ? "Completed" : "Todo"}</td>
-                                </tr>
-                            ))
-                        }
-                    </tbody>
-                </table>
+                {
+                    todos.map(todo =>(
+                        <div className="todo-card" key={todo.id}>
+                            <div className={todo.completed ? "todo-card-header-complete" : "todo-card-header-todo"}>
+                                <p>{todo.completed ? "Done" : "Todo"}</p>
+                            </div>
+                            <div>
+                                <p>Title: {todo.title}</p>
+                                <p>Status: {todo.completed ? "Done" : "Todo"}</p>
+                            </div>
+                        </div>
+                    ))
+                }
             </div>
         );
     }

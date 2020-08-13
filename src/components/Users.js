@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import {connect} from "react-redux";
 import {loadUsers} from "../actions/userActions";
-import {Link} from "react-router-dom";
+import avatar from "../assets/avatar.png";
 
 class Users extends Component {
 
@@ -24,34 +24,30 @@ class Users extends Component {
         }
     }
 
+    onCardClick(id) {
+        this.props.history.push(`/users/${id}/todos`);
+    }
+
     render() {
         const{users} = this.state;
         console.log("users list ", users);
         return (
             <div className="users">
                 <h1>List of Users</h1>
-                <table className="userTable">
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Phone Number</th>
-                            <th>Company</th>
-                            <th>Todos</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {users.map(user => (
-                            <tr key={user.id}>
-                                <td>{user.name}</td>
-                                <td>{user.email}</td>
-                                <td>{user.phone}</td>
-                                <td>{user.company.name}</td>
-                                <td><Link to={`/users/${user.id}/todos`} className="todosLink">Click Here</Link></td>
-                            </tr>
-                        ))}
-                    </tbody>
-                </table>
+                
+                {users.map(user => (
+                    <div className="card" key={user.id} onClick={()=>this.onCardClick(user.id)}>
+                        <img src={avatar} className="avatar-icon" alt="user"/>
+                        <br/>
+                        <span>{user.name}</span>
+                        <hr/>
+                        <div className="card-body">
+                            <p><i class="fas fa-envelope"></i> {user.email}</p>
+                            <p><i class="fas fa-phone-volume"></i> {user.phone}</p>
+                            <p><i class="fas fa-building"></i> {user.company.name}</p>
+                        </div>
+                    </div>
+                ))}
             </div>
         );
     }

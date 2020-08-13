@@ -1,5 +1,5 @@
 .home, .users, .todos {
-  margin: 5%;
+  margin: 6%;
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -27,7 +27,7 @@
 .linkToUsers {
   position: absolute;
   left: 11%;
-  top: 11%;
+  top: 13%;
   border: 2px solid #32b2d8;
   border-radius: 5px;
   background-color: #32b2d8;
@@ -55,4 +55,81 @@
   padding: 3px;
   text-decoration: none;
   font-weight: bold;
+}
+
+.card {
+  border: 2px solid #ddd;
+  float: left;
+  margin:10px;
+  height: 228px;
+  width: 30%;
+  box-shadow: 2px 2px 2px #ddd;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.card hr {
+  border: 1px solid #ddd;
+  width: 68%;
+}
+
+.avatar-icon {
+  width: 15%;
+}
+
+.todo-card {
+  border: 2px solid #ddd;
+  float: left;
+  margin: 10px;
+  height: 152px;
+  width: 30%;
+  box-shadow: 2px 2px 2px #ddd;
+  border-radius: 7px;
+}
+
+.todo-card-header-todo {
+  height: 46px;
+  background-color: #32b2d8;
+  border: 1px solid #32b2d8;
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.todo-card-header-complete {
+  height: 46px;
+  background-color: #4CAF50;
+  border: 1px solid #4CAF50;
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* Media Queris for Tablet  ipad*/
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    .card {
+      width: 46%;
+    }
+
+    .linkToUsers {
+      top: 9%;
+    }
+}
+
+/* Media Queris for Mobile */
+@media only screen and (min-device-width: 320px) and (max-device-width: 812px) {
+  .card, .todo-card {
+    width: 90%;
+  }
+
+  .linkToUsers {
+    position: relative;
+    left: 0;
+    top: 0;
+  }
 }
