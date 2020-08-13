@@ -30,7 +30,6 @@ class Users extends Component {
 
     render() {
         const{users} = this.state;
-        console.log("users list ", users);
         return (
             <div className="users">
                 <h1>List of Users</h1>
@@ -43,9 +42,9 @@ class Users extends Component {
                         <hr/>
                         <div className="card-body">
                             <div>
-                                <p><i class="fas fa-envelope"></i></p>
-                                <p><i class="fas fa-phone-volume"></i></p>
-                                <p><i class="fas fa-building"></i> </p>
+                                <p><i className="fas fa-envelope"></i></p>
+                                <p><i className="fas fa-phone-volume"></i></p>
+                                <p><i className="fas fa-building"></i> </p>
                             </div>
                             <div>
                                 <p><span>&nbsp;{user.email}</span></p>
